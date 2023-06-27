@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Lava
+  - Computer
+  - Coin
+  - Bullet
+  - Rock
+  - Level
+  - NextMap
+  - Boom
+  - Speed
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 2782994703
+    locked: 0
+  - name: Image
+    uniqueID: 468723229
+    locked: 0
+  - name: Map
+    uniqueID: 3135280399
+    locked: 0
+  - name: Computer
+    uniqueID: 191659015
+    locked: 0
+  - name: Player
+    uniqueID: 296834099
+    locked: 0
+  - name: Level
+    uniqueID: 674273303
+    locked: 0
