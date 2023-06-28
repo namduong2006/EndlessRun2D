@@ -7,9 +7,12 @@ public class SLplayer : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D rbsl;
-    [SerializeField] SpriteRenderer plrenderer;
+    [SerializeField] SpriteRenderer prenderer;
     private float slspeed = 4f;
     public bool jump = true;
+    public float speedpl;
+    public float runspeed = 1f;
+    public bool boss = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,28 +23,50 @@ public class SLplayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlaySL();
+        PlaySL();       
     }
     private void PlaySL()
-    {
+    {       
         // di chuyen
 
         var h = Input.GetAxis("Horizontal");
-        Vector2 move = new Vector2(h,0f);
-        transform.Translate(move * slspeed * Time.deltaTime);
+        
         //rbsl.velocity = move*slspeed*Time.deltaTime;
-       
-        // xoay
 
-        if (h == 0)
+        if (boss == false)
         {
-            animator.SetBool("run", false);
-        }
-        if (h != 0)
-        {
+            Vector2 move = new Vector2(runspeed, 0f);
+            transform.Translate(move * slspeed * Time.deltaTime);
             animator.SetBool("run", true);
-            plrenderer.flipX =h < 0;
         }
+       
+        // xoay+chay
+        // 
+        if (boss == true)
+        {
+            runspeed = 0f;
+            transform.Translate(new Vector2(h, 0f) * slspeed * Time.deltaTime);
+            if (h == 0)
+            {
+                animator.SetBool("run", false);
+            }
+            if (h != 0)
+            {
+                animator.SetBool("run", true);
+                prenderer.flipX = h < 0;
+            }
+
+            
+
+            // chem
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                animator.Play("Chem");               
+            }
+            slspeed = 2f;
+        }
+
         // nhay
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && jump == true)
@@ -51,20 +76,16 @@ public class SLplayer : MonoBehaviour
             animator.Play("Jump");
         }
 
-        // chem
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            animator.Play("Chem");
-            slspeed = 1f;
-        }
-        slspeed = 4f;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Untagged"))
         {
             jump = true;
+        }
+        if (collision.gameObject.CompareTag("Boss"))
+        {            
+            boss = true;           
         }
     }
 }

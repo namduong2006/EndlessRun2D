@@ -14,6 +14,7 @@ public class UIHome : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         //DataManager.Coins = 0;
         int c = DataManager.Coins;
         ttcoinText.text = "Coin: " + c.ToString();
@@ -26,15 +27,20 @@ public class UIHome : MonoBehaviour
         StartCoroutine(LoadSceneAsyn(levelIndex));
     }
     IEnumerator LoadSceneAsyn(int levelIndex)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
+    {       
+        
         loadingScene.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);           
         while (!operation.isDone)
-        {
-            loadingBar.value = operation.progress;
-            yield return null;
-        }
+        {           
+            loadingBar.value = operation.progress;           
+            yield return null;           
+        }        
     }
+
+    // exit game
+
     public void ExitGame()
     {
         Application.Quit();

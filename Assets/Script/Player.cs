@@ -13,19 +13,22 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject coinani;
     [SerializeField] GameObject gameoverUI;
     [SerializeField] GameObject gameWinUI;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] SpriteRenderer plrenderer;
+    private float speed = 2f;
+    private float speedb = 2f;
     private float jumpForce = 5.5f;  
-    private bool isJumps = true;
-    private int coin=0;  
+    private bool isJumps = true;    
+    private int coin=0;
+    private bool isboss=false;
     private bool gameover=false;
     [SerializeField] AudioSource audiobackground;
-    [SerializeField] AudioSource audiosource;
+    [SerializeField] AudioSource audioplayer;
     [SerializeField] AudioClip audioCoin;
     [SerializeField] AudioClip audioGameover;
-    [SerializeField] AudioClip audioJump;
+    [SerializeField] AudioClip audioJump;   
     private void Start()
-    {       
-       
+    {
+        Time.timeScale = 1f;
         speed = 2f;
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
@@ -42,27 +45,68 @@ public class Player : MonoBehaviour
         
     }
     void MovePlayer()
-    {
-        // auto di chuyen
+    {       
+        // auto di chuyen truoc khi gãp boss
         
-        transform.Translate (Vector2.right*speed*Time.deltaTime);
-       
+        if(isboss == false)
+        {                       
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            anim.SetBool("run",true);
+        }
+
+        // di chuyen bang nut an khi gap boss
+
+        if(isboss == true)
+        {
+            speed = 0;
+            var h = Input.GetAxis("Horizontal");
+            transform.Translate(new Vector2(h,0f) * speedb * Time.deltaTime);
+            if (h == 0)
+            {
+                anim.SetBool("run", false);
+            }
+            if (h != 0)
+            {
+                anim.SetBool("run", true);
+                plrenderer.flipX = h < 0;
+            }
+
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                anim.Play("Chem");               
+            }
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                anim.Play("Chemcb2");
+            }
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                anim.Play("Chemn");
+            }
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                anim.Play("ChemComBo");
+            }
+            
+        }
 
         //jump
 
-        if (Input.GetKeyDown(KeyCode.UpArrow)&&isJumps==true)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isJumps == true)
         {
             isJumps = false;
-            audiosource.clip = audioJump;
-            audiosource.Play();
-            rb.velocity=new Vector2(rb.velocity.x,jumpForce);
+            audioplayer.clip = audioJump;
+            audioplayer.Play();
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             anim.Play("Jump");
-            
+
         }
         if (isJumps == false && Input.GetKeyDown(KeyCode.UpArrow))
         {
             return;
         }
+
+
 
         //slip
 
@@ -75,7 +119,7 @@ public class Player : MonoBehaviour
 
         if (gameover == true)
         {
-            StartCoroutine(GameOverUI());
+            StartCoroutine(GameOverUI()); 
             
         }
 
@@ -87,12 +131,12 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         gameoverUI.SetActive(true);
     }
-
+    
     // tat audio
 
     void StopAudio()
     {
-        audiosource.Stop();
+        audioplayer.Stop();
         audiobackground.Stop();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -101,8 +145,8 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Computer") || collision.gameObject.CompareTag("Lava")|| collision.gameObject.CompareTag("Boom"))
         {
-            audiosource.clip = audioGameover;
-            audiosource.Play();
+            audioplayer.clip = audioGameover;
+            audioplayer.Play();
             audiobackground.Stop();
             gameover = true;
             speed = 0;
@@ -121,8 +165,8 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Coin"))
         {
-            audiosource.clip = audioCoin;
-            audiosource.Play();
+            audioplayer.clip = audioCoin;
+            audioplayer.Play();
             coin++;
             UIManager.Instance.SetCoin(coin);           
             DataManager.Coins++;
@@ -145,6 +189,13 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Speed"))
         {
             speed = speed + 0.25f;
+        }
+
+        // check boss
+
+        if (collision.gameObject.CompareTag("toboss"))
+        {
+            isboss = true;
         }
     }
 

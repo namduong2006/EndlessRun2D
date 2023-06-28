@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text coinText;
     [SerializeField] TMP_Text coingText;
     [SerializeField] TMP_Text coinwText;
-
+      
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         coingText.text = coinText.text;
-        coinwText.text = coinText.text;
+        coinwText.text = coinText.text;       
     }
     public void SetCoin(int coin)
     {
@@ -37,5 +37,12 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/Game");
     }
-    
+    public void Setting()
+    {
+        Time.timeScale = 0f;
+    }
+    public void Continue()
+    {
+        Time.timeScale = 1f;
+    }   
 }

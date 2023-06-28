@@ -494,7 +494,7 @@ TextureImporter:
         width: 42
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -502,6 +502,27 @@ TextureImporter:
       bones: []
       spriteID: 439be5aa8f540d34b8e364961fce6ecf
       internalID: -308031350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset 1_18
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 824
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded4a30acd00d7d4e90485389da6491e
+      internalID: 369202010
       vertices: []
       indices: 
       edges: []
@@ -527,6 +548,7 @@ TextureImporter:
       Asset 1_15: 2038677791
       Asset 1_16: 314643979
       Asset 1_17: -308031350
+      Asset 1_18: 369202010
       Asset 1_2: -1984731409
       Asset 1_3: 1623670369
       Asset 1_4: 542161603
