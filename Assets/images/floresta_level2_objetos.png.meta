@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,9 +101,294 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: floresta_level2_objetos_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 198
+        width: 282
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd8190d4a04cc84395a30f1b55de7a0
+      internalID: 1144417131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floresta_level2_objetos_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 200
+        width: 282
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17dcb0c985f15aa418513cbbf9ba92a6
+      internalID: -1109852097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floresta_level2_objetos_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 200
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868d39171e3d6584fb685d284b62daa8
+      internalID: -2068129002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floresta_level2_objetos_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 100
+        width: 74
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5c2e6cc4bf78ce40b6e96dee9830c61
+      internalID: -1497982195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floresta_level2_objetos_4
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 100
+        width: 74
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d3d221ec9a8f214e89a3a6e257e2ff4
+      internalID: 372227256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floresta_level2_objetos_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 100
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebce95e5e25f374bb01252a8ce941d1
+      internalID: 1259466676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floresta_level2_objetos_6
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 100
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535426abba3ccfb44bdd49fa732b6449
+      internalID: -2086988007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floresta_level2_objetos_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 63
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34db46f599c436643a154b5c4e7d54ce
+      internalID: 1065152613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floresta_level2_objetos_8
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a826760353f13743b9e24bdabcd79c7
+      internalID: 1203488497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floresta_level2_objetos_9
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 0
+        width: 126
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e734487925781341affaeae68545c97
+      internalID: 1321143437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floresta_level2_objetos_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 42
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5339ef963b4ca488456602283fae68
+      internalID: -1686460411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floresta_level2_objetos_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 30
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda42bbf3b1ea064eb4b5b89d884de95
+      internalID: -737110655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floresta_level2_objetos_12
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96497c109432307439dd33975279400f
+      internalID: -930254634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +399,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      floresta_level2_objetos_0: 1144417131
+      floresta_level2_objetos_1: -1109852097
+      floresta_level2_objetos_10: -1686460411
+      floresta_level2_objetos_11: -737110655
+      floresta_level2_objetos_12: -930254634
+      floresta_level2_objetos_2: -2068129002
+      floresta_level2_objetos_3: -1497982195
+      floresta_level2_objetos_4: 372227256
+      floresta_level2_objetos_5: 1259466676
+      floresta_level2_objetos_6: -2086988007
+      floresta_level2_objetos_7: 1065152613
+      floresta_level2_objetos_8: 1203488497
+      floresta_level2_objetos_9: 1321143437
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

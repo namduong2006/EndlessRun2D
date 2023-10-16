@@ -5,20 +5,37 @@ using UnityEngine.UI;
 
 public class Music : MonoBehaviour
 {
-    [SerializeField] AudioSource music;
-    [SerializeField] AudioSource sound;
-    [SerializeField] Slider volumMusic;
-    [SerializeField] Slider volumeSound;
-    // Start is called before the first frame update
-    void Start()
+    public static Music Instance;
+    [SerializeField] private AudioSource music;    
+    [SerializeField] private AudioClip[] sounds;
+    AudioSource sound;
+    private void Awake()
     {
-
+        Instance = this;       
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        music.volume = volumMusic.value;
-        sound.volume = volumeSound.value;
-    }  
+        sound = GetComponent<AudioSource>();
+    }
+    public void SetVolumSound(float volumsound)
+    {
+        sound.volume = volumsound;
+        Data.Instance.VolSound = volumsound;
+    }
+    public void SetVolumMusic(float volum)
+    {
+        music.volume = volum;
+        Data.Instance.VolMusic = volum;
+    }
+    public void SoundCoin()
+    {
+        sound.clip = sounds[0];
+        sound.Play();
+    }
+    public void SoundGameOver()
+    {
+        music.Stop();
+        sound.clip = sounds[1];
+        sound.Play();
+    }
 }
